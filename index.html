@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Bona - Najbolja pizza u gradu!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: #e74c3c;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '🍕';
+            font-size: 100px;
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            opacity: 0.1;
+        }
+        
+        .logo {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .tagline {
+            font-size: 16px;
+            opacity: 0.95;
+        }
+        
+        .promo-banner {
+            background: #f39c12;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        
+        .info-section {
+            padding: 30px 20px;
+            background: #f8f9fa;
+            border-bottom: 3px solid #e74c3c;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .info-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            min-width: 30px;
+        }
+        
+        .menu-section {
+            padding: 30px 20px;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            color: #e74c3c;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .pizza-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .pizza-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .pizza-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .pizza-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .pizza-price {
+            font-size: 24px;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .pizza-price.old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 18px;
+            margin-right: 10px;
+        }
+        
+        .pizza-description {
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .pizza-emoji {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        
+        .cta-section {
+            padding: 30px 20px;
+            background: #ecf0f1;
+        }
+        
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+        
+        .btn-maps {
+            background: #4285f4;
+            color: white;
+        }
+        
+        .btn-call {
+            background: #27ae60;
+            color: white;
+        }
+        
+        .btn-whatsapp {
+            background: #25d366;
+            color: white;
+        }
+        
+        .btn-instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .icon-text {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">🍕 Pizza Bona</div>
+            <div class="tagline">Najbolja pizza u gradu!</div>
+        </div>
+        
+        <!-- Promo Banner -->
+        <div class="promo-banner">
+            🎉 -20% NA SVE PIZZE OVAJ VIKEND! 🎉
+        </div>
+        
+        <!-- Info Section -->
+        <div class="info-section">
+            <div class="info-item">
+                <span class="info-icon">📍</span>
+                <div>
+                    <strong>Adresa:</strong><br>
+                    Bulevar kralja Aleksandra 100, Beograd
+                </div>
+            </div>
+            <div class="info-item">
+                <span class="info-icon">🕐</span>
+                <div>
+                    <strong>Radno vreme:</strong><br>
+                    Svakim danom: 10:00 - 23:00
+                </div>
+            </div>
+            <div class="info-item">
+                <span class="info-icon">🚚</span>
+                <div>
+                    <strong>Dostava:</strong><br>
+                    Besplatna dostava za porudžbine preko 1500 RSD
+                </div>
+            </div>
+        </div>
+        
+        <!-- Menu Section -->
+        <div class="menu-section">
+            <h2 class="section-title">Naš Meni</h2>
+            
+            <div class="pizza-card">
+                <div class="pizza-emoji">🍕</div>
+                <div class="pizza-header">
+                    <span class="pizza-name">Margherita</span>
+                    <div>
+                        <span class="pizza-price old-price">900 RSD</span>
+                        <span class="pizza-price">720 RSD</span>
+                    </div>
+                </div>
+                <div class="pizza-description">
+                    Klasična italiana - paradajz sos, mocarela, bosiljak, maslinovo ulje
+                </div>
+            </div>
+            
+            <div class="pizza-card">
+                <div class="pizza-emoji">🍕</div>
+                <div class="pizza-header">
+                    <span class="pizza-name">Quattro Formaggi</span>
+                    <div>
+                        <span class="pizza-price old-price">1200 RSD</span>
+                        <span class="pizza-price">960 RSD</span>
+                    </div>
+                </div>
+                <div class="pizza-description">
+                    Četiri sira - mocarela, gorgonzola, parmezan, grana padano
+                </div>
+            </div>
+            
+            <div class="pizza-card">
+                <div class="pizza-emoji">🍕</div>
+                <div class="pizza-header">
+                    <span class="pizza-name">Capricciosa</span>
+                    <div>
+                        <span class="pizza-price old-price">1100 RSD</span>
+                        <span class="pizza-price">880 RSD</span>
+                    </div>
+                </div>
+                <div class="pizza-description">
+                    Šunka, pečurke, masline, artičoke, paradajz sos, mocarela
+                </div>
+            </div>
+        </div>
+        
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2 class="section-title">Poručite odmah!</h2>
+            
+            <a href="https://www.google.com/maps/search/?api=1&query=Bulevar+kralja+Aleksandra+100+Beograd" 
+               class="cta-button btn-maps" target="_blank">
+                <span class="icon-text">
+                    <span>📍</span>
+                    <span>Otvori u Google Maps</span>
+                </span>
+            </a>
+            
+            <a href="tel:+381111234567" class="cta-button btn-call">
+                <span class="icon-text">
+                    <span>📞</span>
+                    <span>Pozovi: 011/123-4567</span>
+                </span>
+            </a>
+            
+            <a href="https://wa.me/381111234567?text=Zdravo!%20Želim%20da%20poručim%20pizzu%20sa%20-20%25%20popustom!" 
+               class="cta-button btn-whatsapp" target="_blank">
+                <span class="icon-text">
+                    <span>💬</span>
+                    <span>Poruči preko WhatsApp</span>
+                </span>
+            </a>
+            
+            <a href="https://www.instagram.com/pizzabona" 
+               class="cta-button btn-instagram" target="_blank">
+                <span class="icon-text">
+                    <span>📸</span>
+                    <span>Prati nas na Instagram</span>
+                </span>
+            </a>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>🍕 Pizza Bona © 2025</p>
+            <p style="margin-top: 10px; opacity: 0.8;">Hvala što ste skenirali naš QR kod!</p>
+        </div>
+    </div>
+</body>
+</html>
